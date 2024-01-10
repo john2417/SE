@@ -13,7 +13,7 @@ class db:
         for line in lines:
             tokens = line.split(',')
             title = tokens[0].strip()
-            author = token[1].strip()
+            author = tokens[1].strip()
 
             if title != '' and author != '':
                 booklist.append(book(title, author))

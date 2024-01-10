@@ -1,5 +1,5 @@
-from book import book
-from bookmanager import bookmanager
+from Book import book
+from Bookmanager import bookmanager
 
 manager = bookmanager()
 running = True
@@ -22,13 +22,15 @@ while running:
     elif menu == "2":
         title = input("Input book name : ")
         author = input("Input Author : ")
-        
-        manager.appendbook(book(title, author))
+        manager.append(book(title, author))
     elif menu == "3":
-        pass
+        title = input("Title : ")
+        manager.removebook(title)
     elif menu == "4":
-        pass
+        title = input("Title : ")
+        title2 = input("Title to chage : ")
+        manager.modifybook(title, title2)
     elif menu == "5":
         running = False
     else:
-        print("Put right input")
+        print("Please input the right number !!!")
