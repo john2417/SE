@@ -1,0 +1,1 @@
+test,test/ntest2/ntest,test/n5,& C:/Users/john2/AppData/Local/Programs/Python/Python311/python.exe h:/SE/SE/main.py/n

@@ -1,14 +1,28 @@
-class book (object):
-    def __init__(self, title, author):
+class Book:
+    def __init__(self,isbn,title,gn,author,publisher,price):
+        self.isbn = isbn
         self.title = title
+        self.gn = gn
         self.author = author
-
-    def greeting(self):
-        print("Book name : " + self.title)
-        print("Autor : " + self.author)
-
-    def setTitle(self, title):
-        self.title = title
-
-    def toString(self):
-        return self.title + "," + self.author + '/n'
+        self.publisher = publisher
+        self.price = price
+    def Write(self,fs):
+        fs.write(self.isbn+",")
+        fs.write(self.title+",")
+        fs.write(str(self.gn)+",")
+        fs.write(self.author+",")
+        fs.write(self.publisher+",")
+        fs.write(str(self.price)+"\n")
+    @staticmethod
+    def LoadBook(fs):
+        data = fs.readline()
+        elems = data.split(",")
+        if len(elems)<6:
+            return None
+        isbn = elems[0]
+        title = elems[1]
+        gn = int(elems[2])
+        author = elems[3]
+        publisher = elems[4]
+        price = int(elems[5][:-1])
+        return Book(isbn,title,gn,author,publisher,price)
