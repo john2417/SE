@@ -69,11 +69,12 @@ class Application:
     def SelectMenu(self):
         os.system("cls")
         print("==  도서 관리 프로그램 ==")
-        print("1:장르 추가")
-        print("2:도서 추가")
-        print("3:도서 삭제")
-        print("4:도서 검색")
-        print("5:전체 보기")
+        print("1:Add Genre")
+        print("2:Add Book")
+        print("3:Delete Book")
+        print("4:Search Book")
+        print("5:View Everything")
+        print("0: Exit program")
         return input("\n메뉴 입력 ◀:")
     def AddGenre(self):
         print("===장르 추가===")
