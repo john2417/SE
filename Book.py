@@ -6,15 +6,17 @@ class Book:
         self.author = author
         self.publisher = publisher
         self.price = price
-    def Write(self,fs):
+        
+    def write(self,fs):
         fs.write(self.isbn+",")
         fs.write(self.title+",")
         fs.write(str(self.gn)+",")
         fs.write(self.author+",")
         fs.write(self.publisher+",")
         fs.write(str(self.price)+"\n")
+        
     @staticmethod
-    def LoadBook(fs):
+    def load_book(fs):
         data = fs.readline()
         elems = data.split(",")
         if len(elems)<6:
