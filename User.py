@@ -1,5 +1,5 @@
 class User:
-    def __init__(self,id,name,birth_d,phone_n,email,ban = False):
+    def __init__(self,id,name,birth_d,phone_n,email,ban = True):
         self.id = id
         self.name = name
         self.birth_d = birth_d
@@ -7,15 +7,15 @@ class User:
         self.email = email
         self.ban = ban
         
-    def Write(self,fs):
+    def write(self,fs):
         fs.write(self.id+",")
         fs.write(self.name+",")
         fs.write(str(self.birth_d)+",")
         fs.write(str(self.phone_n)+",")
         fs.write(self.email+",")
-        fs.writh(self.ban+",")
+        fs.write(str(self.ban)+"\n")
     @staticmethod
-    def LoadUser(fs):
+    def load_user(fs):
         data = fs.readline()
         elems = data.split(",")
         if len(elems)<5:
