@@ -54,10 +54,10 @@ class Edit:
     
     def save(self):
         print("===Save===")
-        self.save_genres(self)
-        self.save_books(self)
-        self.save_users(self)
-        self.save_checkouts(self)
+        self.save_genres()
+        self.save_books()
+        self.save_users()
+        self.save_checkouts()
 
     def save_genres(self):
         fs = open("genres.csv", "w")
@@ -89,43 +89,43 @@ class Edit:
 
     def add_genre(self):
         print("===Add Genre===")
-        self.view_genres(self)
+        self.view_genres()
         genre = input("Name fo the Genre:")
         self.genres.append(genre)
 
     def add_book(self):
         print("===Add Book===")
-        gn = self.select_genre(self)  # 장르를 선택한다.
+        gn = self.select_genre()  # 장르를 선택한다.
         if gn == 0:  # 잘못 선택하였을 때
             print("You choosed wrong")
             return
         isbn = input("ISBN:")  # ISBN을 입력받는다.
-        sbook = self.find_book(self, isbn)  # ISBN으로 도서를 검색한다.
+        sbook = self.find_book(isbn)  # ISBN으로 도서를 검색한다.
         if sbook != None:  # 검색한 도서가 존재하면
             print("The ISBN Already exists.")
             return
-        book = self.make_book(self, isbn, gn)  # 도서 개체를 만든다.
+        book = self.make_book(isbn, gn)  # 도서 개체를 만든다.
         self.books.append(book)  # 도서 컬렉션에 추가한다.
 
     def add_user(self):
         print("===Add User===")
-        id = input("ID:")  # ISBN을 입력받는다.
-        suser = self.find_user(self, id)  # ISBN으로 도서를 검색한다.
-        if suser != None:  # 검색한 도서가 존재하면
+        id = input("ID:")  
+        suser = self.find_user(id)  
+        if suser != None:  
             print("The ID Already exists.")
             return
-        user = self.make_user(self, id)  # 도서 개체를 만든다.
-        self.users.append(user)  # 도서 컬렉션에 추가한다.
+        user = self.make_user(id)  
+        self.users.append(user)  
         
     def do_checkout(self):
         print("===Checkout===")
         id = input("ID:")
         isbn = input("ISBN: ")
-        checkout = self.make_checkout(self, id, isbn)
+        checkout = self.make_checkout(id, isbn)
         self.checkouts.append(checkout)
 
     def select_genre(self):
-        self.view_genres(self)
+        self.view_genres()
         gn = input_int("Number of the genre:")
         if gn > 0 and gn <= len(self.genres):
             return gn
@@ -148,12 +148,12 @@ class Edit:
         return User(id, name, birth_d, phone_n, email, ban)
 
     def make_checkout(self, id, isbn):
-        user = self.find_user(self,id)
+        user = self.find_user(id)
         if user == None:
             print("The user doesn't exist")
             return
         name = user.name
-        book = self.find_book(self, isbn)
+        book = self.find_book(isbn)
         if book == None:
             print("The book doesn't exist")
             return
@@ -164,7 +164,7 @@ class Edit:
     def remove_book(self):
         print("===Remove Book===")
         isbn = input("isbn:")
-        book = self.find_book(self, isbn)
+        book = self.find_book(isbn)
         if book == None:
             print("The book doesn't exist")
             return
@@ -175,7 +175,7 @@ class Edit:
     def remove_user(self):
         print("===Remove User===")
         id = input("id:")
-        user = self.find_user(self, id)
+        user = self.find_user(id)
         if user == None:
             print("The user doesn't exist")
             return
@@ -188,7 +188,7 @@ class Edit:
         print("===Retrun Book===")
         id = input("id:")
         isbn = input("isbn :")
-        checkout = self.find_checkout(self, id, isbn)
+        checkout = self.find_checkout(id, isbn)
         if checkout == None:
             print("The user doesn't exist")
             return
@@ -220,20 +220,20 @@ class Edit:
     def find_book_veiw(self):
         print("===Book Find===")
         isbn = input("isbn:")
-        book = self.find_book(self, isbn)
+        book = self.find_book(isbn)
         if book == None:
             print("The book doesn't exist.")
             return
-        self.view_book(self, book)
+        self.view_book(book)
 
     def find_user_veiw(self):
         print("===User Find===")
         id = input("id:")
-        user = self.find_user(self, id)
+        user = self.find_user(id)
         if user == None:
             print("The user doesn't exist.")
             return
-        self.view_user(self, user)
+        self.view_user(user)
 
 
     def view_all(self):
@@ -246,12 +246,12 @@ class Edit:
     def view_books(self):
         print("=== {0} Books".format(len(self.books)))
         for book in self.books:
-            self.view_book(self, book)
+            self.view_book(book)
             
     def view_users(self):
         print("=== {0} Users ".format(len(self.users)))
         for user in self.users:
-            self.view_user(self, user)
+            self.view_user(user)
 
     def view_genres(self):
         sz = len(self.genres)
@@ -262,7 +262,7 @@ class Edit:
     def view_checkouts(self):
         print("=== {0} Checkouts ".format(len(self.checkouts)))
         for checkout in self.checkouts:
-            self.view_checkout(self, checkout)
+            self.view_checkout(checkout)
 
     def view_book(self, book):
         print("{0}:{1}".format(book.isbn, book.title))

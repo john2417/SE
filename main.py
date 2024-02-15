@@ -1,6 +1,6 @@
-import Application
+from Application import Application
 def main():
-    app = Application.Application()
+    app = Application()
     app.run()
 if __name__ == '__main__':
     main()

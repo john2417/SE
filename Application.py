@@ -4,7 +4,7 @@ from common import tryinput_int
 from Edit import Edit
 class Application:
     def __init__(self):
-        self.E = Edit
+        self.E = Edit()
         self.E.genres= list()
         self.E.books = list()
         self.E.users = list()
@@ -22,11 +22,11 @@ class Application:
                     if key_a == '0':
                         break
                     elif key_a == '1':
-                        Edit.add_genre(self.E)
+                        self.E.add_genre()
                     elif key_a == '2':
-                        Edit.add_book(self.E)
+                        self.E.add_book()
                     elif key_a == '3':
-                        Edit.add_user(self.E)
+                        self.E.add_user()
                     else:
                         print("Chossed wrong.")
                     input("Press enter.")
@@ -36,11 +36,11 @@ class Application:
                     if key_s == '0':
                         break
                     elif key_s == '1':
-                        Edit.find_book_veiw(self.E)
+                        self.E.find_book_veiw()
                     elif key_s == '2':
-                        Edit.find_user_veiw(self.E)
+                        self.E.find_user_veiw()
                     elif key_s == '3':
-                        Edit.view_all(self.E)
+                        self.E.view_all()
                     else:
                         print("Chossed wrong.")
                     input("Press enter.")
@@ -50,9 +50,9 @@ class Application:
                     if key_d == '0':
                         break
                     elif key_d == '1':
-                        Edit.remove_book(self.E)
+                        self.E.remove_book()
                     elif key_d == '2':
-                        Edit.remove_user(self.E)
+                        self.E.remove_user()
                     else:
                         print("Chossed wrong.")
                     input("Press enter.")
@@ -62,28 +62,28 @@ class Application:
                     if key_c == '0':
                         break
                     elif key_c == '1':
-                        Edit.do_checkout(self.E)
+                        self.E.do_checkout()
                     elif key_c == '2':
-                        Edit.return_checkout(self.E)
+                        self.E.return_checkout()
                     elif key_c == '3':
-                        Edit.view_checkouts(self.E)
+                        self.E.view_checkouts()
                     else:
                         print("Chossed wrong.")
                     input("Press enter.")
             else:
                 print("Chossed wrong.")
             input("Press enter.")
-        Edit.save(self.E)
+        self.E.save()
     
     
         
     def load(self):
         print("===Load===")
         try:
-            Edit.load_genres(self.E)
-            Edit.load_books(self.E)
-            Edit.load_useres(self.E)
-            Edit.load_checkouts(self.E)
+            self.E.load_genres()
+            self.E.load_books()
+            self.E.load_useres()
+            self.E.load_checkouts()
         except:
             print("Welcome")
         input("Press Enter.")
