@@ -238,9 +238,9 @@ class Edit:
 
     def view_all(self):
         print("===View all===")
-        self.view_genres(self)
-        self.view_books(self)
-        self.view_users(self)
+        self.view_genres()
+        self.view_books()
+        self.view_users()
 
 
     def view_books(self):
