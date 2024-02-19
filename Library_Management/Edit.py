@@ -15,7 +15,7 @@ class Edit:
         
 
     def load_genres(self):
-        fs = open("genres.csv", "r")
+        fs = open("Library_Management/genres.csv", "r")
         datas = fs.read()
         # datas:["peom\non-novel\nnovel\n"]
         ds_gs = datas.split("\n")  # divid them by \n
