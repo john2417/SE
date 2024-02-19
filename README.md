@@ -29,3 +29,13 @@ Continuous Delivery - I tried 3 whole days trying to get Jenkins to work. But wh
 
 Unit tests - I have made unit tests using unittest. And it was written in Python. The test was for the functions in [Edit](https://github.com/john2417/SE/blob/8885a1511aca2500ce67cb357c4c700ef24f3d8e/Library_Management/Edit.py). [Unittest](https://github.com/john2417/SE/blob/8885a1511aca2500ce67cb357c4c700ef24f3d8e/Library_Management/Edittest.py)
 
+IDE - The IDE I used was [VScode](https://github.com/john2417/SE/blob/d60fa96c046cf632c0df0064e18c0a9ca1d37f5e/IDE/VS%20Code.png). And my favorite key shortcut is ctrl +K,ctrl+C. Which can make lot of code into comments. I used them when I want to check something without other codes. 
+
+DSL - I made a simple DSL with python. I used partial. And if someone wants to print the file you can just write 
+pritfile|[file_name]. 
+[DSL](https://github.com/john2417/SE/blob/d60fa96c046cf632c0df0064e18c0a9ca1d37f5e/Library_Management/DSL.py)
+
+Functional Programming - 1. Only final data structures. https://github.com/john2417/SE/blob/71358f55304abd7b044475cc90ecfdeeed137eab/Library_Management/Edit.py#L55-L60
+2. (mostly) side-effect-free functions
+https://github.com/john2417/SE/blob/71358f55304abd7b044475cc90ecfdeeed137eab/Library_Management/Edit.py#L177-L188
+3. 
