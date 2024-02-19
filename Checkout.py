@@ -7,9 +7,9 @@ class Checkout:
         
     
     def write(self,fs):
-        fs.write(self.id+",")
+        fs.write(str(self.id)+",")
         fs.write(self.name+",")
-        fs.write(self.isbn+",")
+        fs.write(str(self.isbn)+",")
         fs.write(self.title+"\n")
         
         
@@ -19,9 +19,9 @@ class Checkout:
         elems = data.split(",")
         if len(elems)<4:
             return None
-        id = elems[0]
+        id = int(elems[0])
         name = elems[1]
-        isbn = elems[2]
+        isbn = int(elems[2])
         title = elems[3]
         
         return Checkout(id, name, isbn,title)

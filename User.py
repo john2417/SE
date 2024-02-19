@@ -8,7 +8,7 @@ class User:
         self.ban = ban
         
     def write(self,fs):
-        fs.write(self.id+",")
+        fs.write(str(self.id)+",")
         fs.write(self.name+",")
         fs.write(str(self.birth_d)+",")
         fs.write(str(self.phone_n)+",")
@@ -20,10 +20,10 @@ class User:
         elems = data.split(",")
         if len(elems)<5:
             return None
-        id = elems[0]
+        id = int(elems[0])
         name = elems[1]
         birth_d = int(elems[2])
-        phone_n = int(elems[3])
+        phone_n = elems[3]
         email = elems[4]
         ban = elems[5]
         

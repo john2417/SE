@@ -8,7 +8,7 @@ class Book:
         self.price = price
         
     def write(self,fs):
-        fs.write(self.isbn+",")
+        fs.write(str(self.isbn)+",")
         fs.write(self.title+",")
         fs.write(str(self.gn)+",")
         fs.write(self.author+",")
@@ -21,7 +21,7 @@ class Book:
         elems = data.split(",")
         if len(elems)<6:
             return None
-        isbn = elems[0]
+        isbn = int(elems[0])
         title = elems[1]
         gn = int(elems[2])
         author = elems[3]

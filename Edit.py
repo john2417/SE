@@ -78,8 +78,6 @@ class Edit:
         fs.close()
         
     def save_checkouts(self):
-        if self.checkouts == None:
-            return
         fs = open("checkouts.csv", "w")
         for checkout in self.checkouts:
             if checkout == None:
@@ -99,7 +97,12 @@ class Edit:
         if gn == 0:  # 잘못 선택하였을 때
             print("You choosed wrong")
             return
-        isbn = input("ISBN:")  # ISBN을 입력받는다.
+        while True:
+            try :
+                isbn = int(input("ISBN:"))  # ISBN을 입력받는다.
+                break
+            except ValueError:
+                print("please input number")
         sbook = self.find_book(isbn)  # ISBN으로 도서를 검색한다.
         if sbook != None:  # 검색한 도서가 존재하면
             print("The ISBN Already exists.")
@@ -109,7 +112,13 @@ class Edit:
 
     def add_user(self):
         print("===Add User===")
-        id = input("ID:")  
+        while True:
+            try :
+                id = int(input("ID:"))   # ISBN을 입력받는다.
+                break
+            except ValueError:
+                print("please input number")
+
         suser = self.find_user(id)  
         if suser != None:  
             print("The ID Already exists.")
@@ -119,9 +128,22 @@ class Edit:
         
     def do_checkout(self):
         print("===Checkout===")
-        id = input("ID:")
-        isbn = input("ISBN: ")
+        while True:
+            try :
+                id = int(input("ID:"))   # ISBN을 입력받는다.
+                break
+            except ValueError:
+                print("please input number")
+                
+        while True:
+            try :
+                isbn = int(input("ISBN:"))  # ISBN을 입력받는다.
+                break
+            except ValueError:
+                print("please input number")
         checkout = self.make_checkout(id, isbn)
+        if checkout == None:
+            return
         self.checkouts.append(checkout)
 
     def select_genre(self):
@@ -136,7 +158,12 @@ class Edit:
         title = input("Tile:")
         author = input("Author:")
         publisher = input("Publisher:")
-        price = input_int("Price:")
+        while True:
+            try :
+                price = int(input("Price:"))
+                break
+            except ValueError:
+                print("input number")
         return Book(isbn, title, gn, author, publisher, price)
     
     def make_user(self, id):
@@ -186,11 +213,11 @@ class Edit:
         
     def return_checkout(self):
         print("===Retrun Book===")
-        id = input("id:")
-        isbn = input("isbn :")
+        id = int(input("id:"))
+        isbn = int(input("isbn :"))
         checkout = self.find_checkout(id, isbn)
         if checkout == None:
-            print("The user doesn't exist")
+            print("The user or the isbn doesn't exist")
             return
         
         self.checkouts.remove(checkout)
