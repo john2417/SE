@@ -36,4 +36,4 @@ jobs:
         echo "hi" 
     - name: Test main.py
       run: |
-        python3 main.py
+        python3 Edittest.py
