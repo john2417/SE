@@ -7,4 +7,25 @@ DDD - I have brainstormed with the events in the Library. And changed the events
 Metrics - I have used Sonarqube and pylint. My code was written in Python so I have to use them. There is a screenshot of Sonarqube and Pylint. And project zip file of Sonarqube. [Metrics](https://github.com/john2417/SE/tree/3fe00b112a58c6d70e412f7f1e74ff79206db453/Metrics)
 
 CCD - This is the My personal CCD cheat sheet.[Cheat sheet](https://github.com/john2417/SE/blob/3fe00b112a58c6d70e412f7f1e74ff79206db453/CCD/Personal%20CCD%20cheat%20sheet.pdf) And the five points.
-1. Add a good commentary [Link](https://github.com/john2417/SE/blob/3fe00b112a58c6d70e412f7f1e74ff79206db453/Library_Management/Edit.py#L17C4-L26C34)
+1. Add a good commentary 
+https://github.com/john2417/SE/blob/3fe00b112a58c6d70e412f7f1e74ff79206db453/Library_Management/Edit.py#L17-L26
+
+3. Use a descriptive name  
+ https://github.com/john2417/SE/blob/a70841f5231c8b09abd619e6a0e13e307d4b1b96/Library_Management/User.py#L1-L8
+
+5. Separate singular from plural  
+ https://github.com/john2417/SE/blob/a70841f5231c8b09abd619e6a0e13e307d4b1b96/Library_Management/Edit.py#L227-L231
+
+7. Give each class/function only one purpose  
+ https://github.com/john2417/SE/blob/9f2d80f363f9e13d9f16f9d2a502bf8bb6e08a0b/Library_Management/Edit.py#L74-L78
+
+9. When the logic is finished, give a line  
+ https://github.com/john2417/SE/blob/a70841f5231c8b09abd619e6a0e13e307d4b1b96/Library_Management/Edit.py#L28-L35
+
+Build - I have tried Gradle. Gradle is more appropriate with Java so I tried Java code for Gradle. This is the screenshot that I ran the jar file that I built. [Screen shot1](https://github.com/john2417/SE/blob/a70841f5231c8b09abd619e6a0e13e307d4b1b96/gradle/gradle.png) [Screen shot2](https://github.com/john2417/SE/blob/36a6208affe274c4ef56ed4dd147cc35cafe4f3b/gradle/gradle2.png)
+ It shows the CSV file in the Libraryprogram. And says hello. [Gradle](https://github.com/john2417/SE/blob/e90a1085766810f33ee134671b956a5fb3fbd60f/app/build.gradle)
+ 
+Continuous Delivery - I tried 3 whole days trying to get Jenkins to work. But when I fixed some errors different errors keep occurred. So I changed it to github action. I made two github actions. First one is to build [gradle](https://github.com/john2417/SE/blob/e90a1085766810f33ee134671b956a5fb3fbd60f/.github/workflows/gradle.yml), and Second one is running [python unittest](https://github.com/john2417/SE/blob/e90a1085766810f33ee134671b956a5fb3fbd60f/.github/workflows/python-application). 
+
+Unit tests - I have made unit tests using unittest. And it was written in Python. The test was for the functions in [Edit](https://github.com/john2417/SE/blob/8885a1511aca2500ce67cb357c4c700ef24f3d8e/Library_Management/Edit.py). [Unittest](https://github.com/john2417/SE/blob/8885a1511aca2500ce67cb357c4c700ef24f3d8e/Library_Management/Edittest.py)
+
