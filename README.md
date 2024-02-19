@@ -17,7 +17,7 @@ https://github.com/john2417/SE/blob/3fe00b112a58c6d70e412f7f1e74ff79206db453/Lib
  https://github.com/john2417/SE/blob/a70841f5231c8b09abd619e6a0e13e307d4b1b96/Library_Management/Edit.py#L227-L231
 
 7. Give each class/function only one purpose  
- 
+ https://github.com/john2417/SE/blob/9f2d80f363f9e13d9f16f9d2a502bf8bb6e08a0b/Library_Management/Edit.py#L74-L78
 
 9. When the logic is finished, give a line  
  https://github.com/john2417/SE/blob/a70841f5231c8b09abd619e6a0e13e307d4b1b96/Library_Management/Edit.py#L28-L35
