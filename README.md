@@ -26,3 +26,6 @@ Build - I have tried Gradle. Gradle is more appropriate with Java so I tried Jav
  It shows the CSV file in the Libraryprogram. And says hello. [Gradle](https://github.com/john2417/SE/blob/e90a1085766810f33ee134671b956a5fb3fbd60f/app/build.gradle)
  
 Continuous Delivery - I tried 3 whole days trying to get Jenkins to work. But when I fixed some errors different errors keep occurred. So I changed it to github action. I made two github actions. First one is to build [gradle](https://github.com/john2417/SE/blob/e90a1085766810f33ee134671b956a5fb3fbd60f/.github/workflows/gradle.yml), and Second one is running [python unittest](https://github.com/john2417/SE/blob/e90a1085766810f33ee134671b956a5fb3fbd60f/.github/workflows/python-application). 
+
+Unit tests - I have made unit tests using unittest. And it was written in Python. The test was for the functions in [Edit](https://github.com/john2417/SE/blob/8885a1511aca2500ce67cb357c4c700ef24f3d8e/Library_Management/Edit.py). [Unittest](https://github.com/john2417/SE/blob/8885a1511aca2500ce67cb357c4c700ef24f3d8e/Library_Management/Edittest.py)
+
