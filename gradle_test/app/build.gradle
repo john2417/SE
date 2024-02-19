@@ -37,3 +37,12 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+jar {
+    manifest{
+        attributes('Main-Class' : 'gradle_test_1.App')
+    }
+    from{
+        configurations.runtimeClasspath.collect { it.isDirectory()? it : zipTree(it)}
+    }
+}
