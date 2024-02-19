@@ -17,12 +17,12 @@ class Edit:
     def load_genres(self):
         fs = open("genres.csv", "r")
         datas = fs.read()
-        # datas:["시\n수필\n소설\n"]
-        ds_gs = datas.split("\n")  # 개행 문자를 기준으로 분리
-        # dg_gs:["시","수필","소설",""]
+        # datas:["peom\non-novel\nnovel\n"]
+        ds_gs = datas.split("\n")  # divid them by \n
+        # dg_gs:["peom","non-novel","novel",""]
         fs.close()
-        ds_gs.pop()  # 맨 마지막 원소 삭제
-        # ds_gs:["시","수필","소설"]
+        ds_gs.pop()  # Delete the last argument
+        # ds_gs:["peom","non-novel","novel"]
         self.genres.extend(ds_gs)
 
     def load_books(self):
@@ -93,28 +93,28 @@ class Edit:
 
     def add_book(self):
         print("===Add Book===")
-        gn = self.select_genre()  # 장르를 선택한다.
-        if gn == 0:  # 잘못 선택하였을 때
+        gn = self.select_genre()  # choose genre
+        if gn == 0:  # when choosed wrong
             print("You choosed wrong")
             return
         while True:
             try :
-                isbn = int(input("ISBN:"))  # ISBN을 입력받는다.
+                isbn = int(input("ISBN:"))  # input ISBN
                 break
             except ValueError:
                 print("please input number")
-        sbook = self.find_book(isbn)  # ISBN으로 도서를 검색한다.
-        if sbook != None:  # 검색한 도서가 존재하면
+        sbook = self.find_book(isbn)  # search with ISBN
+        if sbook != None:  # If it exists
             print("The ISBN Already exists.")
             return
-        book = self.make_book(isbn, gn)  # 도서 개체를 만든다.
-        self.books.append(book)  # 도서 컬렉션에 추가한다.
+        book = self.make_book(isbn, gn)  # Create a book object.
+        self.books.append(book)  # add to books
 
-    def add_user(self):
+    def add_user(self): #almost same as add_book
         print("===Add User===")
         while True:
             try :
-                id = int(input("ID:"))   # ISBN을 입력받는다.
+                id = int(input("ID:"))   
                 break
             except ValueError:
                 print("please input number")
@@ -130,14 +130,14 @@ class Edit:
         print("===Checkout===")
         while True:
             try :
-                id = int(input("ID:"))   # ISBN을 입력받는다.
+                id = int(input("ID:"))   
                 break
             except ValueError:
                 print("please input number")
                 
         while True:
             try :
-                isbn = int(input("ISBN:"))  # ISBN을 입력받는다.
+                isbn = int(input("ISBN:"))  
                 break
             except ValueError:
                 print("please input number")
@@ -196,7 +196,7 @@ class Edit:
             print("The book doesn't exist")
             return
         self.books.remove(book)
-        del book  # 메모리에서 제거
+        del book  #remove from the memory
         print("Removed")
         
     def remove_user(self):
@@ -207,7 +207,7 @@ class Edit:
             print("The user doesn't exist")
             return
         self.users.remove(user)
-        del user  # 메모리에서 제거
+        del user  
         print("Removed")    
         
         
@@ -221,7 +221,7 @@ class Edit:
             return
         
         self.checkouts.remove(checkout)
-        del checkout  # 메모리에서 제거
+        del checkout  
         print("Removed") 
 
     def find_book(self, isbn):

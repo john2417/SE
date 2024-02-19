@@ -16,11 +16,10 @@ class IF(object):
 def printfile(x):
     fs = open(x, "r")
     datas = fs.read()
-        # datas:["시\n수필\n소설\n"]
-    ds_gs = datas.split("\n")  # 개행 문자를 기준으로 분리
-        # dg_gs:["시","수필","소설",""]
+
+    ds_gs = datas.split("\n")
     fs.close()
-    ds_gs.pop()  # 맨 마지막 원소 삭제
+    ds_gs.pop()
 
     return ds_gs
 
