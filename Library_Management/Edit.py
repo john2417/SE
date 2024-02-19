@@ -26,7 +26,7 @@ class Edit:
         self.genres.extend(ds_gs)
 
     def load_books(self):
-        fs = open("books.csv", "r")
+        fs = open("Library_Management/books.csv", "r")
         while True:
             book = Book.load_book(fs)
             if book == None:
@@ -35,7 +35,7 @@ class Edit:
         fs.close()
         
     def load_useres(self):
-        fs = open("users.csv", "r")
+        fs = open("Library_Management/users.csv", "r")
         while True:
             user = User.load_user(fs)
             if user == None:
@@ -44,7 +44,7 @@ class Edit:
         fs.close()
 
     def load_checkouts(self):
-        fs = open("checkouts.csv", "r")
+        fs = open("Library_Management/checkouts.csv", "r")
         while True:
             checkout = Checkout.load_checkout(fs)
             if checkout == None:
@@ -60,25 +60,25 @@ class Edit:
         self.save_checkouts()
 
     def save_genres(self):
-        fs = open("genres.csv", "w")
+        fs = open("Library_Management/genres.csv", "w")
         for genre in self.genres:
             fs.write(genre + "\n")
         fs.close()
 
     def save_books(self):
-        fs = open("books.csv", "w")
+        fs = open("Library_Management/books.csv", "w")
         for book in self.books:
             book.write(fs)
         fs.close()
     
     def save_users(self):
-        fs = open("users.csv", "w")
+        fs = open("Library_Management/users.csv", "w")
         for uesr in self.users:
             uesr.write(fs)
         fs.close()
         
     def save_checkouts(self):
-        fs = open("checkouts.csv", "w")
+        fs = open("Library_Management/checkouts.csv", "w")
         for checkout in self.checkouts:
             if checkout == None:
                 continue
