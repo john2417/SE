@@ -24,7 +24,7 @@ public class App {
 
     public List<List<String>> readCSV() {
         List<List<String>> csvList = new ArrayList<List<String>>();
-        File csv = new File("H:/SE/SE/books.csv");
+        File csv = new File("H:/SE/SE/Library_Management/books.csv");
         BufferedReader br = null;
         String line ="";
 
